@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Roadmap</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --text: #333;
+      --primary: #2c3e50;
+      --accent: #1a73e8;
+      --card-bg: #fff;
+    }
+    body.dark {
+      --bg: #1e1e1e;
+      --text: #e0e0e0;
+      --primary: #111;
+      --accent: #90caf9;
+      --card-bg: #2b2b2b;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1.5rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    #toggle-theme {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    #progress-bar {
+      height: 8px;
+      background: #ccc;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 0.5rem 0 2rem;
+    }
+    #progress {
+      height: 100%;
+      background: var(--accent);
+      width: 0;
+      transition: width 0.3s;
+    }
+    .controls {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .controls input {
+      flex: 1;
+      padding: 0.4rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    .day {
+      background: var(--card-bg);
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .day.completed {
+      opacity: 0.6;
+      text-decoration: line-through;
+    }
+    .date {
+      font-weight: bold;
+      color: var(--accent);
+    }
+    @media (min-width: 700px) {
+      .day {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .date { width: 200px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚀 Career Roadmap</h1>
+    <button id="toggle-theme">Dark Mode</button>
+  </header>
+
+  <div class="container">
+    <div id="progress-bar"><div id="progress"></div></div>
+    <div class="controls">
+      <input type="text" id="search" placeholder="Search tasks..." />
+    </div>
+    <div id="plan"></div>
+  </div>
+
+  <script>
+    const startDate = new Date('2025-06-26');
+    const endDate = new Date('2026-01-15');
+    const milestones = {
+      0: "🧠 Self Audit & Decision Finalization<br>– Reflect on career goals, constraints<br>– Finalize MBA vs startup vs hybrid<br>– Mental reset to go all in",
+      1: "📚 GMAT Prep Begins<br>– Sign up on GMAT Club / Target Test Prep<br>– Practice 25 questions/day (Quant/Verbal split)",
+      7: "✍️ Weekly Reflection Begins<br>– Start journaling weekly clarity entries",
+      14: "🎥 Record 30-sec intro video<br>– For LinkedIn or MBA applications",
+      21: "📊 GMAT Focus Mock 1<br>– Check baseline & stress handling",
+      30: "🔁 GMAT Diagnostic Review<br>– Adapt strategy based on errors",
+      45: "📝 Start MBA Essay Drafts<br>– Identity, values, failures, growth",
+      60: "💼 Startup/Strategy Job Outreach<br>– Cold emails to founders + product critiques",
+      75: "📚 GMAT Mock 2 + Verbal Focus Week",
+      90: "📈 GMAT Mock 3 + Confidence Building",
+      105: "🧠 Mindset Reset & Power Prep",
+      120: "🌐 Final MBA School List",
+      135: "🚀 GMAT Exam Week<br>– Power mode, reduce distractions",
+      145: "✅ Final CV + Polished Essays",
+      165: "📤 Submit R1 MBA Applications",
+      180: "📈 Resume Startup Role Hunt or Mini Venture",
+      210: "💬 MBA Interview Prep + Mock Sessions",
+      240: "🎯 Round 2 Applications if needed",
+      250: "🎉 Results + Startup Planning (build/scale/switch)"
+    };
+
+    const planDiv = document.getElementById('plan');
+    let dayCount = 0;
+    let currentDate = new Date(startDate);
+
+    while (currentDate <= endDate) {
+      const dayDiv = document.createElement('div');
+      dayDiv.className = 'day';
+
+      const dateStr = currentDate.toISOString().split('T')[0];
+      const milestone = milestones[dayCount] || '📌 Keep building momentum. Reflect, act, refine.';
+
+      dayDiv.innerHTML = `
+        <label>
+          <input type="checkbox" />
+          <span class="date">Day ${dayCount + 1} – ${dateStr}</span>
+        </label>
+        <div class="task">${milestone}</div>
+      `;
+
+      planDiv.appendChild(dayDiv);
+      currentDate.setDate(currentDate.getDate() + 1);
+      dayCount++;
+    }
+
+    // Handle dark mode
+    const toggleBtn = document.getElementById('toggle-theme');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      toggleBtn.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+    });
+
+    // Task completion tracking & progress bar
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach((cb, index) => {
+      const key = `day_${index}`;
+      cb.checked = localStorage.getItem(key) === 'true';
+      if (cb.checked) cb.closest('.day').classList.add('completed');
+      cb.addEventListener('change', () => {
+        localStorage.setItem(key, cb.checked);
+        cb.closest('.day').classList.toggle('completed', cb.checked);
+        updateProgress();
+      });
+    });
+
+    function updateProgress() {
+      const total = checkboxes.length;
+      const done = [...checkboxes].filter(c => c.checked).length;
+      document.getElementById('progress').style.width = `${(done/total)*100}%`;
+    }
+    updateProgress();
+
+    // Search filter
+    const search = document.getElementById('search');
+    search.addEventListener('input', e => {
+      const term = e.target.value.toLowerCase();
+      document.querySelectorAll('.day').forEach(day => {
+        day.style.display = day.textContent.toLowerCase().includes(term) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
