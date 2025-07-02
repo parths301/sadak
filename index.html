@@ -2,68 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Parth's GMAT Roadmap</title>
-  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet"/>
-  <style>
-    body { margin:0; font-family:'Segoe UI',sans-serif; background:#f0f4f8; color:#333; }
-    header { background:#006d77; color:white; padding:20px; text-align:center; }
-    header h1 { margin:0; }
-    #countdown { font-size:1.2rem; margin-top:8px; }
-    .board { display:flex; gap:20px; padding:20px; overflow-x:auto; }
-    .column { flex:1; background:white; border-radius:8px; padding:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1); min-width:240px; }
-    .column h2 { text-align:center; color:#023047; }
-    .card { background:#ffddd2; margin:10px 0; padding:12px; border-left:5px solid #ef476f; border-radius:6px; cursor:pointer; }
-    .card .date { font-size:0.9rem; color:#555; margin-bottom:4px; }
-    #calendar { max-width:900px; margin:20px auto; background:white; padding:10px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parth's GMAT Kanban</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    <h1>🚀 Parth Sharma’s GMAT Roadmap</h1>
-    <div id="countdown">Loading countdown...</div>
+    <h1>🎯 Parth's GMAT Journey</h1>
+    <div id="countdown">Loading days remaining...</div>
+    <nav>
+      <a href="index.html">📌 Kanban</a>
+      <a href="question_bank.html">📚 Question Bank</a>
+    </nav>
   </header>
-  <div class="board">
-    <div class="column" data-status="todo"><h2>To Do</h2></div>
-    <div class="column" data-status="inprogress"><h2>In Progress</h2></div>
-    <div class="column" data-status="done"><h2>Done</h2></div>
-  </div>
+  <main class="board">
+    <section class="column" data-status="todo"><h2>📥 To Do</h2></section>
+    <section class="column" data-status="inprogress"><h2>🚧 In Progress</h2></section>
+    <section class="column" data-status="done"><h2>✅ Done</h2></section>
+  </main>
   <div id="calendar"></div>
 
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="modal-close">&times;</span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-desc"></p>
+      <div id="modal-video"></div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
-  <script>
-    // 1. Countdown Timer
-    const end = new Date("2025-07-31");
-    function updateCountdown(){
-      const now = new Date();
-      const diff = Math.max(0, Math.ceil((end - now)/(1000*60*60*24)));
-      document.getElementById('countdown').textContent = `🧠 ${diff} days left until GMAT Day`;
-    }
-    updateCountdown();
-    setInterval(updateCountdown, 86400000);
-
-    // 2. Generate Date Cards (today → end-July)
-    const todo = document.querySelector('[data-status="todo"]');
-    let day = new Date(), stop = new Date("2025-07-31");
-    let count=1;
-    while(day<=stop && count<=30){
-      const co = day.toLocaleDateString('en-US',{month:'short',day:'2-digit',year:'numeric'});
-      const c = document.createElement('div');
-      c.className = "card";
-      c.innerHTML = `<div class="date">${co}</div><div>Day ${count}: GMAT study session</div>`;
-      todo.appendChild(c);
-      day.setDate(day.getDate()+1);
-      count++;
-    }
-
-    // 3. Calendar Init
-    document.addEventListener('DOMContentLoaded',function(){
-      new FullCalendar.Calendar(document.getElementById('calendar'), {
-        initialView: 'dayGridMonth',
-        initialDate: new Date(),
-        height: 'auto'
-      }).render();
-    });
-  </script>
 </body>
 </html>
