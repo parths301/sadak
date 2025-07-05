@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Strategy Infographic: ₹70,000 Aggressive Growth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F5F5F5;
+            color: #2C2C2C;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #00A6FB, #43B049);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <main class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center my-8 md:my-12">
+            <h1 class="text-4xl md:text-6xl font-black gradient-text">Blueprint for ₹70,000</h1>
+            <p class="mt-4 text-lg md:text-xl font-semibold text-gray-700">An Aggressive Growth Investment Strategy for the Long-Term Investor</p>
+        </header>
+
+        <section id="intro" class="my-12 md:my-16">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">The Core-Satellite Strategy: Balancing Stability & Alpha</h2>
+                <p class="text-gray-600 mb-8">This portfolio is built on a professional framework. The 'Core' provides market-linked stability with diversified, low-cost funds. The 'Satellites' are targeted bets on high-growth stocks and alternative assets, designed to outperform the market (generate 'alpha'). This structure enforces discipline while seeking higher returns.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
+                <div class="md:col-span-2">
+                     <div class="chart-container" style="height: 300px; max-height: 300px;">
+                        <canvas id="coreSatelliteChart"></canvas>
+                    </div>
+                </div>
+                <div class="md:col-span-3 space-y-4">
+                    <div class="card flex items-start gap-4">
+                        <div class="text-3xl font-bold text-[#00A6FB]">70%</div>
+                        <div>
+                            <h3 class="font-bold text-xl">THE CORE</h3>
+                            <p class="text-gray-600">This is the portfolio's foundation, built with broadly diversified Index Funds and a high-quality Flexi-Cap fund. It's designed for long-term, steady growth that mirrors the market's strength.</p>
+                        </div>
+                    </div>
+                    <div class="card flex items-start gap-4">
+                        <div class="text-3xl font-bold text-[#F34213]">30%</div>
+                        <div>
+                            <h3 class="font-bold text-xl">THE SATELLITES</h3>
+                            <p class="text-gray-600">These are smaller, tactical investments in direct stocks, thematic funds, and alternatives. They carry higher risk but offer the potential for significantly higher returns, driving the portfolio's growth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-16 border-t-2 border-gray-200">
+
+        <section id="portfolio-breakdown" class="my-12 md:my-16">
+             <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">Aggressive Portfolio Allocation: ₹70,000</h2>
+                <p class="text-gray-600 mb-8">Here is the specific, actionable blueprint for deploying your capital. The allocation is heavily skewed towards growth assets (84.3%) to align with the primary objective of maximizing returns over a 10+ year horizon. Each component is chosen for a specific role.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                     <div class="chart-container">
+                        <canvas id="assetAllocationChart"></canvas>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                     <div class="card text-center">
+                        <h3 class="font-bold text-lg text-gray-800">Equity Engine</h3>
+                        <p class="text-4xl font-black text-[#00A6FB]">60.0%</p>
+                        <p class="font-semibold text-gray-600">₹42,000</p>
+                    </div>
+                    <div class="card text-center">
+                        <h3 class="font-bold text-lg text-gray-800">Alternative Assets</h3>
+                        <p class="text-4xl font-black text-[#F34213]">24.3%</p>
+                        <p class="font-semibold text-gray-600">₹17,000</p>
+                    </div>
+                    <div class="card text-center">
+                        <h3 class="font-bold text-lg text-gray-800">Debt Stabilizer</h3>
+                        <p class="text-4xl font-black text-[#43B049]">10.0%</p>
+                        <p class="font-semibold text-gray-600">₹7,000</p>
+                    </div>
+                     <div class="card text-center">
+                        <h3 class="font-bold text-lg text-gray-800">Direct Stocks</h3>
+                        <p class="text-4xl font-black text-[#FFC43D]">5.7%</p>
+                        <p class="font-semibold text-gray-600">₹10,000</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-16 border-t-2 border-gray-200">
+        
+        <section id="instrument-details" class="my-12 md:my-16">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">Instrument Deep Dive</h2>
+                <p class="text-gray-600 mb-12">Below is the granular breakdown of each investment within the portfolio, detailing the amount, the instrument, and the strategic reason for its inclusion.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card">
+                    <h3 class="font-bold text-lg">UTI Nifty 50 Index Fund</h3>
+                    <p class="text-2xl font-black text-gray-800">₹10,000 <span class="text-base font-semibold text-gray-500">(14.3%)</span></p>
+                    <p class="text-sm font-semibold text-[#00A6FB] mt-1">EQUITY (CORE)</p>
+                    <p class="text-gray-600 mt-2">Low-cost exposure to India's 50 largest companies, forming the stable bedrock of the portfolio.</p>
+                </div>
+                <div class="card">
+                    <h3 class="font-bold text-lg">Parag Parikh Flexi Cap Fund</h3>
+                    <p class="text-2xl font-black text-gray-800">₹12,000 <span class="text-base font-semibold text-gray-500">(17.1%)</span></p>
+                    <p class="text-sm font-semibold text-[#00A6FB] mt-1">EQUITY (CORE)</p>
+                    <p class="text-gray-600 mt-2">Actively managed fund with international holdings for diversification and a value-oriented approach.</p>
+                </div>
+                <div class="card">
+                    <h3 class="font-bold text-lg">Motilal Oswal Midcap 150</h3>
+                    <p class="text-2xl font-black text-gray-800">₹7,000 <span class="text-base font-semibold text-gray-500">(10.0%)</span></p>
+                    <p class="text-sm font-semibold text-[#FFC43D] mt-1">EQUITY (SATELLITE)</p>
+                    <p class="text-gray-600 mt-2">Captures the higher growth potential of the mid-cap segment at an extremely low cost.</p>
+                </div>
+                 <div class="card">
+                    <h3 class="font-bold text-lg">Quant ELSS Tax Saver Fund</h3>
+                    <p class="text-2xl font-black text-gray-800">₹7,000 <span class="text-base font-semibold text-gray-500">(10.0%)</span></p>
+                    <p class="text-sm font-semibold text-[#FFC43D] mt-1">EQUITY (SATELLITE)</p>
+                    <p class="text-gray-600 mt-2">Aggressive growth combined with tax-saving benefits under Sec 80C. 3-year lock-in enforces discipline.</p>
+                </div>
+                <div class="card">
+                    <h3 class="font-bold text-lg">Direct Stocks (Mid/Small-Cap)</h3>
+                    <p class="text-2xl font-black text-gray-800">₹10,000 <span class="text-base font-semibold text-gray-500">(14.3%)</span></p>
+                    <p class="text-sm font-semibold text-[#FFC43D] mt-1">EQUITY (SATELLITE)</p>
+                    <p class="text-gray-600 mt-2">Concentrated bets on high-growth themes like consumption (Page Ind.), defence (Mazagon Dock), and IT (Ksolves).</p>
+                </div>
+                <div class="card">
+                    <h3 class="font-bold text-lg">Sovereign Gold Bonds (SGBs)</h3>
+                    <p class="text-2xl font-black text-gray-800">₹7,000 <span class="text-base font-semibold text-gray-500">(10.0%)</span></p>
+                    <p class="text-sm font-semibold text-[#F34213] mt-1">ALTERNATIVES</p>
+                    <p class="text-gray-600 mt-2">A hedge against inflation and market volatility. Offers 2.5% annual interest plus tax-free capital gains.</p>
+                </div>
+                <div class="card">
+                    <h3 class="font-bold text-lg">Peer-to-Peer (P2P) Lending</h3>
+                    <p class="text-2xl font-black text-gray-800">₹10,000 <span class="text-base font-semibold text-gray-500">(14.3%)</span></p>
+                    <p class="text-sm font-semibold text-[#F34213] mt-1">ALTERNATIVES (HIGH RISK)</p>
+                    <p class="text-gray-600 mt-2"><span class="font-bold text-red-600">⚠️</span> High-risk allocation for yield. Must be spread across 10-20+ borrowers to mitigate default risk.</p>
+                </div>
+                 <div class="card">
+                    <h3 class="font-bold text-lg">ICICI Pru Corporate Bond Fund</h3>
+                    <p class="text-2xl font-black text-gray-800">₹7,000 <span class="text-base font-semibold text-gray-500">(10.0%)</span></p>
+                    <p class="text-sm font-semibold text-[#43B049] mt-1">DEBT (STABILIZER)</p>
+                    <p class="text-gray-600 mt-2">Provides stability, liquidity, and a cushion during equity downturns by investing in high-quality corporate debt.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-16 border-t-2 border-gray-200">
+        
+        <section id="risk" class="my-12 md:my-16">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">Risk Profile Assessment</h2>
+                <p class="text-gray-600 mb-8">No investment is without risk. The aggressive portfolio intentionally embraces higher risk for higher potential returns. Understanding this profile is critical. The primary risk is market volatility, which is mitigated by a long-term horizon and diversification.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="chart-container">
+                    <canvas id="riskRadarChart"></canvas>
+                </div>
+                <div class="space-y-3">
+                    <p><strong class="text-[#F34213]">Market Risk (High):</strong> The portfolio's value will fluctuate with the stock market. A long-term view (10+ years) is the best mitigation.</p>
+                    <p><strong class="text-[#F34213]">Credit/Default Risk (High):</strong> Concentrated in the P2P lending portion. Mitigation requires extreme diversification across many borrowers.</p>
+                    <p><strong class="text-[#FFC43D]">Liquidity Risk (Medium):</strong> Funds are locked in for ELSS (3 years) and SGBs (8 years). This portfolio is not for short-term needs.</p>
+                    <p><strong class="text-[#43B049]">Concentration Risk (Low):</strong> While individual stocks are held, the Core-Satellite structure and diversified funds keep this risk managed.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-16 border-t-2 border-gray-200">
+
+        <section id="next-steps" class="my-12 md:my-16">
+             <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">The Journey Ahead: Building Wealth</h2>
+                <p class="text-gray-600 mb-12">Investing is not a one-time event; it's a lifelong journey. After this initial investment, the most powerful step is to cultivate a habit of regular saving through a Systematic Investment Plan (SIP).</p>
+            </div>
+            <div class="relative w-full">
+                <div class="absolute left-1/2 h-full w-1 bg-gray-300 hidden md:block"></div>
+                <div class="relative md:flex items-center justify-between mb-8">
+                    <div class="md:w-5/12 card">
+                        <h3 class="font-bold text-xl text-[#00A6FB]">Step 1: Invest</h3>
+                        <p>Deploy the ₹70,000 as per the allocation plan. Get your capital working in the market.</p>
+                    </div>
+                    <div class="absolute left-1/2 -ml-4 z-10 hidden md:block">
+                        <div class="bg-white border-4 border-[#00A6FB] w-8 h-8 rounded-full"></div>
+                    </div>
+                    <div class="md:w-5/12"></div>
+                </div>
+                <div class="relative md:flex items-center justify-between mb-8">
+                    <div class="md:w-5/12"></div>
+                    <div class="absolute left-1/2 -ml-4 z-10 hidden md:block">
+                        <div class="bg-white border-4 border-[#FFC43D] w-8 h-8 rounded-full"></div>
+                    </div>
+                    <div class="md:w-5/12 card md:text-right">
+                        <h3 class="font-bold text-xl text-[#FFC43D]">Step 2: Monitor & Rebalance</h3>
+                        <p>Review your portfolio annually. Sell some winners and buy some laggards to return to your target allocation. This enforces "buy low, sell high."</p>
+                    </div>
+                </div>
+                <div class="relative md:flex items-center justify-between">
+                     <div class="md:w-5/12 card">
+                        <h3 class="font-bold text-xl text-[#43B049]">Step 3: Compound with SIPs</h3>
+                        <p>Start a monthly SIP into your core funds. This consistency is the true engine of long-term wealth creation, leveraging compounding and rupee cost averaging.</p>
+                    </div>
+                    <div class="absolute left-1/2 -ml-4 z-10 hidden md:block">
+                        <div class="bg-white border-4 border-[#43B049] w-8 h-8 rounded-full"></div>
+                    </div>
+                    <div class="md:w-5/12"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center p-8 mt-12 bg-gray-800 text-white">
+        <p>This infographic is for informational purposes only and does not constitute financial advice. All investments are subject to market risks. Please consult with a qualified financial advisor before making any investment decisions.</p>
+        <p class="text-sm mt-2 opacity-70">Data based on report analysis as of H2 2025.</p>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const wrapLabel = (label, maxLength = 16) => {
+            if (typeof label !== 'string' || label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        };
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+              return label.join(' ');
+            }
+            return label;
+        };
+
+        const chartColors = {
+            blue: '#00A6FB',
+            orange: '#F34213',
+            yellow: '#FFC43D',
+            green: '#43B049',
+            darkGray: '#2C2C2C'
+        };
+
+        const commonChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: {
+                            family: 'Inter',
+                            size: 12
+                        },
+                        boxWidth: 20,
+                        padding: 20
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    },
+                    backgroundColor: '#2C2C2C',
+                    titleFont: {
+                        size: 14,
+                        weight: 'bold',
+                        family: 'Inter'
+                    },
+                    bodyFont: {
+                        size: 12,
+                        family: 'Inter'
+                    },
+                    padding: 10,
+                    cornerRadius: 5
+                }
+            }
+        };
+
+        const coreSatelliteCtx = document.getElementById('coreSatelliteChart')?.getContext('2d');
+        if(coreSatelliteCtx) {
+            new Chart(coreSatelliteCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Core', 'Satellites'],
+                    datasets: [{
+                        data: [70, 30],
+                        backgroundColor: [chartColors.blue, chartColors.orange],
+                        borderColor: '#F5F5F5',
+                        borderWidth: 4
+                    }]
+                },
+                options: {
+                    ...commonChartOptions,
+                    cutout: '70%',
+                }
+            });
+        }
+        
+        const assetAllocationCtx = document.getElementById('assetAllocationChart')?.getContext('2d');
+        if(assetAllocationCtx) {
+            new Chart(assetAllocationCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        'Parag Parikh Flexi Cap', 
+                        'P2P Lending', 
+                        'UTI Nifty 50 Index',
+                        'Direct Stocks',
+                        'SGBs', 
+                        'Motilal Oswal Midcap 150',
+                        'Quant ELSS Tax Saver',
+                        'ICICI Pru Corp Bond'
+                    ].map(label => wrapLabel(label)),
+                    datasets: [{
+                        label: '₹ Amount',
+                        data: [12000, 10000, 10000, 10000, 7000, 7000, 7000, 7000],
+                        backgroundColor: [
+                            chartColors.blue, 
+                            chartColors.orange, 
+                            '#33B8FB',
+                            chartColors.yellow,
+                            '#F57C5E', 
+                            '#FFD76B',
+                            '#66C76A',
+                            chartColors.green
+                        ],
+                        borderColor: '#F5F5F5',
+                        borderWidth: 4
+                    }]
+                },
+                options: {
+                    ...commonChartOptions,
+                    cutout: '70%',
+                }
+            });
+        }
+
+        const riskRadarCtx = document.getElementById('riskRadarChart')?.getContext('2d');
+        if (riskRadarCtx) {
+            new Chart(riskRadarCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['Market Risk', 'Credit Risk', 'Liquidity Risk', 'Concentration Risk'],
+                    datasets: [{
+                        label: 'Aggressive Portfolio Risk Level',
+                        data: [9, 8, 6, 3], // Scored out of 10
+                        backgroundColor: 'rgba(243, 66, 19, 0.2)',
+                        borderColor: 'rgba(243, 66, 19, 1)',
+                        borderWidth: 2,
+                        pointBackgroundColor: 'rgba(243, 66, 19, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(243, 66, 19, 1)'
+                    }]
+                },
+                options: {
+                    ...commonChartOptions,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback
+                            }
+                        }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            pointLabels: {
+                                font: {
+                                    size: 14,
+                                    weight: '600',
+                                    family: 'Inter'
+                                }
+                            },
+                            ticks: {
+                                backdropColor: 'transparent',
+                                stepSize: 2,
+                                font: {
+                                    size: 10
+                                }
+                            },
+                            min: 0,
+                            max: 10
+                        }
+                    }
+                }
+            });
+        }
+    });
+    </script>
+</body>
+</html>
